@@ -1,0 +1,34 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { RecipeIngredientsList } from 'components';
+import { EmptyState } from './EmptyState.js';
+
+import styles from './ShoppingList.module.scss';
+
+const ShoppingList = () => {
+  const recipeLibrary = useSelector(state => state.recipeLibrary);
+  if (!recipeLibrary?.length) { return <EmptyState />; }
+
+  let shoppingList = {};
+  recipeLibrary.forEach(recipe => {
+    recipe.ingredients.forEach(ingredient => {
+      if (shoppingList[ingredient.name]) {
+        shoppingList[ingredient.name].quantity += Number(ingredient.quantity);
+      } else {
+        shoppingList[ingredient.name] = { ...ingredient };
+      }
+    });
+  });
+  const shoppingListIngredients = Object.values(shoppingList);
+
+  return <div className={styles.ShoppingListContainer}>
+    <div className={styles.ShoppingListTitle}>Shopping List</div>
+    <RecipeIngredientsList ingredients={shoppingListIngredients} />
+  </div>;
+};
+
+export {
+  ShoppingList
+};
+export default ShoppingList;
+
