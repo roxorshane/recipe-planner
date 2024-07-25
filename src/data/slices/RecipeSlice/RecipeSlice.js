@@ -11,11 +11,7 @@ const recipeSlice = createSlice({
   reducers: {
     addRecipe: (state, action) => {
       const { name, ingredients } = action.payload;
-      console.log({ name, ingredients });
-      if (!name || getRecipe({ name, state })) { 
-        console.log({ name, state });
-        return; 
-      }
+      if (!name || getRecipe({ name, state })) { return; }
       state.push({
         name,
         ingredients
