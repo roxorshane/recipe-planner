@@ -58,10 +58,10 @@ const FormulaInput = ({ onChange, placeholderText, className }) => {
             setTarget(null)
             break
           case 'Escape':
-          default:
             event.preventDefault()
             setTarget(null)
             break
+          default:
         }
       }
     },
