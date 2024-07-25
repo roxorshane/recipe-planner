@@ -1,0 +1,44 @@
+$pageMargin: 32px;
+$topAppBarHeight: 64px;
+
+.DashboardView {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  height: calc(100vh - $pageMargin * 2 - $topAppBarHeight);
+  padding: 32px;
+  position: relative;
+  width: calc(100vw - $pageMargin * 2);
+
+  .AddRecipeContainer {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 600px;
+    padding: 16px;
+
+    .AddRecipeTitle {
+      font-size: 1.25em;
+      margin-bottom: 4px;
+    }
+  }
+
+  .RecipeLibraryContainer {
+    .RecipeLibraryTitle {
+      font-size: 1.25em;
+      font-weight: 500;
+      margin-bottom: 12px;
+      padding-left: 16px;
+    }
+  }
+
+  .ShoppingListContainer {
+    .ShoppingListTitle {
+      font-size: 1.25em;
+      font-weight: 500;
+      margin-bottom: 12px;
+      padding-left: 16px;
+    }
+  }
+}

@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import { ThemeProvider } from '@rmwc/theme';
+import { ApplicationStore } from 'data';
+import { Provider } from 'react-redux';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+import '@rmwc/button/styles';
+import '@rmwc/data-table/styles';
+import '@rmwc/elevation/styles';
+import '@rmwc/list/styles';
+import '@rmwc/textfield/styles';
+import '@rmwc/theme/styles';
+import '@rmwc/top-app-bar/styles';
+import '@rmwc/typography/styles';
+import themeConfig from 'styles/theme.scss';
+import './index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={ApplicationStore}>
+      <ThemeProvider options={themeConfig}>
+        <App />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
