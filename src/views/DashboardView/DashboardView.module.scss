@@ -14,15 +14,7 @@ $topAppBarHeight: 64px;
 
   .AddRecipeContainer {
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 16px;
-
-    .AddRecipeTitle {
-      font-size: 1.25em;
-      margin-bottom: 4px;
-    }
+    padding: 8px 16px 4px 16px;
   }
 
   .RecipeLibraryContainer {
@@ -30,18 +22,6 @@ $topAppBarHeight: 64px;
       font-size: 1.25em;
       font-weight: 500;
       margin-top: 12px;
-    }
-  }
-
-  .ShoppingListContainer {
-    border-radius: 8px;
-    padding: 16px;
-
-    .ShoppingListTitle {
-      font-size: 1.25em;
-      font-weight: 500;
-      margin-bottom: 12px;
-      padding-left: 16px;
     }
   }
 }
