@@ -8,6 +8,7 @@ import App from './App';
 import '@rmwc/button/styles';
 import '@rmwc/data-table/styles';
 import '@rmwc/elevation/styles';
+import '@rmwc/grid/styles';
 import '@rmwc/list/styles';
 import '@rmwc/textfield/styles';
 import '@rmwc/theme/styles';

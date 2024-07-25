@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Button, Elevation, TextField } from 'rmwc';
+import { Button, Elevation, Grid, GridCell, TextField } from 'rmwc';
 import { RecipeList, FormulaInput, RecipeIngredientsList, ValidationMessage } from 'components';
 import { addRecipe } from 'data/slices/RecipeSlice';
 import { parseFormula, validateRecipe } from 'helpers';
@@ -51,35 +51,41 @@ const DashboardView = () => {
   useEffect(updateShoppingList, [recipeLibrary]);
 
   return <div className={styles.DashboardView}>
-    <Elevation z={2} className={styles.AddRecipeContainer}>
-      <div className={styles.AddRecipeTitle}>Add a recipe</div>
-      <TextField 
-          outlined
-          fullwidth 
-          placeholder="Recipe name"
-          inputRef={nameInput}
-          invalid={nameInputInvalid}
-          onChange={() => setNameInputInvalid(false)}
-      />
-      <FormulaInput 
-          onChange={handleFormulaInputChange}
-          placeholderText="Recipe formula"
-      />
-      <ValidationMessage validationErrors={validationErrors} />
-      <Button 
-          unelevated
-          label="Add recipe"
-          onClick={handleAddRecipeClick}
-      />
-    </Elevation>
-    <div className={styles.RecipeLibraryContainer}>
-      <div className={styles.RecipeLibraryTitle}>Recipe Library</div>
-      <RecipeList recipes={recipeLibrary} />
-    </div>
-    <div className={styles.ShoppingListContainer}>
-      <div className={styles.ShoppingListTitle}>Shopping List</div>
-      <RecipeIngredientsList ingredients={shoppingListIngredients} />
-    </div>
+    <Grid className={styles.Grid}>
+      <GridCell span={5} desktop={5} phone={4}>
+        <Elevation z={2} className={styles.AddRecipeContainer}>
+          <div className={styles.AddRecipeTitle}>Add a recipe</div>
+          <TextField 
+              outlined
+              fullwidth 
+              placeholder="Recipe name"
+              inputRef={nameInput}
+              invalid={nameInputInvalid}
+              onChange={() => setNameInputInvalid(false)}
+          />
+          <FormulaInput 
+              onChange={handleFormulaInputChange}
+              placeholderText="Recipe formula"
+          />
+          <ValidationMessage validationErrors={validationErrors} />
+          <Button 
+              unelevated
+              label="Add recipe"
+              onClick={handleAddRecipeClick}
+          />
+          <div className={styles.RecipeLibraryContainer}>
+            <div className={styles.RecipeLibraryTitle}>Recipe Library</div>
+            <RecipeList recipes={recipeLibrary} />
+          </div>
+        </Elevation>
+      </GridCell>
+      <GridCell span={4} desktop={4} phone={4}>
+        <Elevation z={2} className={styles.ShoppingListContainer}>
+          <div className={styles.ShoppingListTitle}>Shopping List</div>
+          <RecipeIngredientsList ingredients={shoppingListIngredients} />
+        </Elevation>
+      </GridCell>
+    </Grid>
   </div>;
 };
 
