@@ -1,0 +1,18 @@
+.ValidationMessageContainer {
+  background-color: #d2691e33;
+  border: 1px solid #d2691e;
+  border-radius: 4px;
+  padding: 8px;
+
+  .ValidationMessageTitle {
+    font-weight: 500;
+  }
+
+  .ValidationMessageContent {
+    .ValidationMessageList {
+      .ValidationMessageListItem {
+
+      }
+    }
+  }
+}

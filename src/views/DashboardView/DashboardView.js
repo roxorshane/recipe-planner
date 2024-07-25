@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button, Elevation, TextField } from 'rmwc';
-import { RecipeList, FormulaInput, RecipeIngredientsList } from 'components';
+import { RecipeList, FormulaInput, RecipeIngredientsList, ValidationMessage } from 'components';
 import { addRecipe } from 'data/slices/RecipeSlice';
-import { parseFormula } from 'helpers';
+import { parseFormula, validateRecipeComponents } from 'helpers';
 
 import styles from './DashboardView.module.scss';
 
@@ -12,15 +12,20 @@ const DashboardView = () => {
   const recipeLibrary = useSelector(state => state.recipeLibrary);
   const [shoppingListIngredients, setShoppingListIngredients] = useState([]);
   const [formulaValue, setFormulaValue] = useState('');
+  const [validationErrors, setValidationErrors] = useState();
   const nameInput = useRef();
 
   const handleAddRecipeClick = () => {
     const recipeName = nameInput.current.value;
     const recipeComponents = parseFormula(formulaValue);
-    dispatch(addRecipe({
-      name: recipeName,
-      ingredients: recipeComponents
-    }));
+    validateRecipeComponents(recipeComponents).then(() => {
+      dispatch(addRecipe({
+        name: recipeName,
+        ingredients: recipeComponents
+      }));
+    }).catch(validationErrors => {
+      setValidationErrors(validationErrors);
+    });
   }
 
   const handleFormulaInputChange = (value) => {
@@ -56,6 +61,7 @@ const DashboardView = () => {
           onChange={handleFormulaInputChange}
           placeholderText="Recipe formula"
       />
+      <ValidationMessage validationErrors={validationErrors} />
       <Button 
           unelevated
           label="Add recipe"
