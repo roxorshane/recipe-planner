@@ -6,5 +6,9 @@
 
   .FormulaInputEditable {
     outline: none;
+
+    .Placeholder {
+      opacity: 0.6 !important;
+    }
   }
 }

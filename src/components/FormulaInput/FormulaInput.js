@@ -127,6 +127,11 @@ const FormulaInput = ({ onChange, placeholderText, className }) => {
         renderLeaf={renderLeaf}
         onKeyDown={onKeyDown}
         placeholder={placeholderText || "Enter some text..."}
+        renderPlaceholder={({ children, attributes }) => (
+          <div className={styles.Placeholder} {...attributes}>
+            {children}
+          </div>
+        )}
       />
       {target && ingredientNames.length > 0 && (
         <Portal>
