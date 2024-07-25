@@ -1,2 +1,2 @@
 export * from './parseFormula.js';
-export * from './validateRecipeComponents.js';
+export * from './validateRecipe.js';
