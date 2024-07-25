@@ -1,14 +1,12 @@
-$pageMargin: 32px;
 $topAppBarHeight: 64px;
 
 .DashboardView {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  height: calc(100vh - $pageMargin * 2 - $topAppBarHeight);
-  padding: 0 32px;
+  height: calc(100vh - $topAppBarHeight);
   position: relative;
-  width: calc(100vw - $pageMargin * 2);
+  width: 100vw;
 
   .Grid {
     width: 100%;
@@ -19,7 +17,6 @@ $topAppBarHeight: 64px;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    max-width: 600px;
     padding: 16px;
 
     .AddRecipeTitle {
