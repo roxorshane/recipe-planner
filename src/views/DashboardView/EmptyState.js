@@ -1,4 +1,4 @@
-import { IconButton } from 'rmwc';
+import { Icon } from 'rmwc';
 
 import bakingIllustration from 'assets/baking_illustration.jpg';
 
@@ -7,13 +7,13 @@ const EmptyState = ({ styles }) => {
     <div className={styles.Title}>Let's get baking!</div>
     <p className={styles.Message}>
       Add your favourite recipes through the <nobr>Add Recipe button 
-      <IconButton icon='library_add' className={styles.Icon} /></nobr> at the top of the 
+      <Icon icon='library_add' className={styles.Icon} /></nobr> at the top of the 
       screen.
     </p>
     <p className={styles.Message}>
       When you add your recipes, a shopping list will be automatically
       generated. Just use the <nobr>Basket button 
-      <IconButton icon='shopping_basket' className={styles.Icon} /></nobr> to see it.
+      <Icon icon='shopping_basket' className={styles.Icon} /></nobr> to see it.
     </p>
     <div className={styles.Illustration}>
       <img src={bakingIllustration} alt="" />
