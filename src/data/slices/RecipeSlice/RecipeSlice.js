@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { initialRecipeLibrary } from 'data/static';
 
 const getRecipe = ({ name, state }) => {
   return state.find(recipe => recipe.name === name);
@@ -7,7 +6,7 @@ const getRecipe = ({ name, state }) => {
 
 const recipeSlice = createSlice({
   name: 'recipe',
-  initialState: initialRecipeLibrary,
+  initialState: [],
   reducers: {
     addRecipe: (state, action) => {
       const { name, ingredients } = action.payload;
