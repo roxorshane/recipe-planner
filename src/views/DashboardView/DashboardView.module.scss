@@ -12,16 +12,51 @@ $topAppBarHeight: 64px;
     width: 100%;
   }
 
-  .AddRecipeContainer {
+  .RecipeLibraryContainer {
     border-radius: 8px;
     padding: 8px 16px 4px 16px;
-  }
 
-  .RecipeLibraryContainer {
     .RecipeLibraryTitle {
       font-size: 1.25em;
       font-weight: 500;
       margin-top: 12px;
+    }
+  }
+
+  .EmptyStateContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+
+    .Title {
+      font-size: 1.25em;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .Message {
+      text-align: center;
+
+      .Icon {
+        height: 24px;
+        padding: 0;
+        width: 24px;
+
+        :global(.material-icons) {
+          font-size: 0.75em;
+        }
+      }
+    }
+
+    .Illustration {
+      max-width: 600px;
+      width: 100vw;
+
+      img {
+        width: 100%;
+      }
     }
   }
 }
