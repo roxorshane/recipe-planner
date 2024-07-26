@@ -4,11 +4,11 @@ import { TopAppBar, TopAppBarActionItem, TopAppBarRow, TopAppBarSection, TopAppB
 import { AddRecipeForm, ShoppingList } from 'components';
 import styles from './PrimaryLayout.module.scss';
 
-const panelContentType = {
+const panelContentType = Object.freeze({
   none: 0,
   addRecipeForm: 1,
   shoppingList: 2
-};
+});
 
 const PrimaryLayout = () => {
   const [panelContent, setPanelContent] = useState(panelContentType.none);
