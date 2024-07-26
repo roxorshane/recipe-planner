@@ -1,0 +1,10 @@
+$theme-config: (
+  'primary': #f27922,
+  'onPrimary': #ffffff
+);
+
+:export {
+  @each $key, $value in $theme-config {
+  #{unquote($key)}: $value;
+  }
+}
