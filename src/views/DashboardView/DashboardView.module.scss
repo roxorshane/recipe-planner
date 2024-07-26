@@ -38,15 +38,13 @@ $topAppBarHeight: 64px;
 
     .Message {
       text-align: center;
+      line-height: 1.5em;
 
       .Icon {
-        height: 24px;
-        padding: 0;
-        width: 24px;
-
-        :global(.material-icons) {
-          font-size: 0.75em;
+        padding-left: 4px;
+        &:global(.material-icons) {
           color: #e3532b;
+          font-size: 1em;
         }
       }
     }
