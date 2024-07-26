@@ -72,6 +72,14 @@ const AddRecipeForm = ({ onAdd }) => {
             label="Add recipe"
             onClick={handleAddRecipeClick}
         />
+        <div className={styles.FormulaHint}>
+          <div className={styles.Title}>
+            Example formula
+          </div>
+          <p>
+            200g * flour + 150g * butter + 3 * egg + 100g * walnut + 150g * sugar
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -15,5 +15,16 @@
       font-size: 1.25em;
       margin-bottom: 4px;
     }
+
+    .FormulaHint {
+      background-color: #f2792222;
+      border: 1px solid #f27922;
+      border-radius: 4px;
+      padding: 8px;
+
+      .Title {
+        font-weight: 500;
+      }
+    }
   }
 }
