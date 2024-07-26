@@ -31,35 +31,37 @@ const PrimaryLayout = () => {
     );
   }
 
-  return <div className={styles.PrimaryLayout}>
-    <TopAppBar fixed>
-      <TopAppBarRow>
-        <TopAppBarSection>
-          <TopAppBarTitle>
-            <span>Recipe Planner</span>
-          </TopAppBarTitle>
-        </TopAppBarSection>
-        <TopAppBarSection alignEnd className={styles.ActionSection}>
-          <TopAppBarActionItem 
-              icon='library_add'
-              onClick={() => {
-                togglePanelContent(panelContentType.addRecipeForm)
-              }}
-          />
-          <TopAppBarActionItem 
-              icon='shopping_basket'
-              onClick={() => {
-                togglePanelContent(panelContentType.shoppingList)
-              }}
-          />
-          <div style={{height: "1px", width: "10px"}} />
-        </TopAppBarSection>
-      </TopAppBarRow>
-    </TopAppBar>
-    <TopAppBarFixedAdjust />
-    <PanelContent />
-    <Outlet />
-  </div>;
+  return (
+    <div className={styles.PrimaryLayout}>
+      <TopAppBar fixed>
+        <TopAppBarRow>
+          <TopAppBarSection>
+            <TopAppBarTitle>
+              Recipe Planner
+            </TopAppBarTitle>
+          </TopAppBarSection>
+          <TopAppBarSection alignEnd className={styles.ActionSection}>
+            <TopAppBarActionItem 
+                icon='library_add'
+                onClick={() => {
+                  togglePanelContent(panelContentType.addRecipeForm)
+                }}
+            />
+            <TopAppBarActionItem 
+                icon='shopping_basket'
+                onClick={() => {
+                  togglePanelContent(panelContentType.shoppingList)
+                }}
+            />
+            <div className={styles.ActionItemSpacer} />
+          </TopAppBarSection>
+        </TopAppBarRow>
+      </TopAppBar>
+      <TopAppBarFixedAdjust />
+      <PanelContent />
+      <Outlet />
+    </div>
+  );
 };
 
 export {

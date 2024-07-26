@@ -1,7 +1,9 @@
 const EmptyState = ({ styles }) => {
-  return <div className={styles.EmptyStateContainer}>
-    Add a recipe to see your shopping list
-  </div>
+  return (
+    <div className={styles.EmptyStateContainer}>
+      Add a recipe to see your shopping list
+    </div>
+  );
 };
 
 export {

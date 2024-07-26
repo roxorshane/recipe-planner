@@ -10,16 +10,17 @@ const parseFormula = (recipeFormula) => {
       '([\\w\\s]+)'   // ingredient name
   const regexMatcher = new RegExp(regexPattern, 'gi'); // example match: 200g * flour + 10g * baking pwder + 3 * egg.
   const ingredientMatches = [...recipeFormula.matchAll(regexMatcher)];
-  const parsedIngredients = ingredientMatches.reduce((parsedIngredients, match) => {
-    return [
-      ...parsedIngredients,
-      {
-        quantity: Number(match[1]),
-        unitOfMeasurement: match[2],
-        name: match[3].trim()
-      }
-    ];
-  }, []);
+  const parsedIngredients = 
+      ingredientMatches.reduce((parsedIngredients, match) => {
+        return [
+          ...parsedIngredients,
+          {
+            quantity: Number(match[1]),
+            unitOfMeasurement: match[2],
+            name: match[3].trim()
+          }
+        ];
+      }, []);
   return parsedIngredients;
 };
 

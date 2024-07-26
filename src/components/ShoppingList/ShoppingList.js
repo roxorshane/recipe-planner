@@ -12,7 +12,7 @@ const ShoppingList = () => {
     return !recipeLibrary?.length;
   }
 
-  const Content = () => {
+  const ConditionalContent = () => {
     if (shouldShowEmptyState()) { 
       return <EmptyState styles={styles} />;
     }
@@ -35,9 +35,11 @@ const ShoppingList = () => {
     </>;
   };
 
-  return <div className={styles.ShoppingListContainer}>
-    <Content />
-  </div>;
+  return (
+    <div className={styles.ShoppingListContainer}>
+      <ConditionalContent />
+    </div>
+  );
 };
 
 export {

@@ -13,22 +13,26 @@ const DashboardView = () => {
     return !recipeLibrary?.length;
   }
 
-  const Content = () => {
+  const ConditionalContent = () => {
     if (shouldShowEmptyState()) { 
       return <EmptyState styles={styles} />;
     }
 
-    return <Elevation z={2} className={styles.RecipeLibraryContainer}>
-      <div className={styles.RecipeLibraryTitle}>Your recipes</div>
-      <RecipeList recipes={recipeLibrary} />
-    </Elevation>;
+    return (
+      <Elevation z={2} className={styles.RecipeLibraryContainer}>
+        <div className={styles.RecipeLibraryTitle}>
+          Your recipes
+        </div>
+        <RecipeList recipes={recipeLibrary} />
+      </Elevation>
+    );
   };
 
   return <div className={styles.DashboardView}>
     <Grid className={styles.Grid}>
       <GridCell desktop={3} />
       <GridCell span={5} desktop={6} phone={4}>
-        <Content />
+        <ConditionalContent />
       </GridCell>
       <GridCell desktop={3} />
     </Grid>

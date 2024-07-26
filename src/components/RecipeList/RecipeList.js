@@ -3,16 +3,20 @@ import { RecipeListItem, RecipeIngredientsList } from 'components';
 
 const RecipeList = ({ recipes }) => {
   const recipeListItems = recipes.map((recipe, key) => {
-    return <RecipeListItem 
+    return (
+      <RecipeListItem 
         key={key}
         recipe={recipe} 
         expandableContent={
           <RecipeIngredientsList ingredients={recipe.ingredients} />
         }
-    />;
+      />
+    );
   });
 
-  return <List>{recipeListItems}</List>;
+  return (
+    <List>{recipeListItems}</List>
+  );
 };
 
 export {
